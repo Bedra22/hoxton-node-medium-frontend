@@ -1,43 +1,39 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [allPosts, setAllPosts] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5000/posts")
+      .then(resp => resp.json())
+      .then(postsFromServere => setAllPosts(postsFromServere))
+  }, [])
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <h1>Medium BLOG</h1>
+      <div className='all-posts'>
+        <ul>
+          {allPosts.map(item => (
+            <li>
+              <div className='user-part' >
+                <img src={item.Users.image} />
+                <h3>{item.Users.name}</h3>
+              </div>
+              <div className='post-content'>
+                <img src={item.imageContent} />
+                <p>{item.writenContent}</p>
+              </div>
+              <div className='like-comment'>
+                {/* <div>{item.comment}</div> */}
+                <h4>{item.likesInTotal}</h4>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
