@@ -33,7 +33,7 @@ function App() {
       <div className='all-posts'>
         <ul>
           {allPosts.map(item => (
-            <li>
+            <li className='all-posts-li'>
               <div className='user-part' >
                 <img src={item.Users.image} />
                 <h3>{item.Users.name}</h3>
@@ -43,7 +43,7 @@ function App() {
                 <p>{item.writenContent}</p>
               </div>
               <div className='like-comment'>
-                <h4>{item.likesInTotal}</h4>
+                <h4>💗 {item.likesInTotal}</h4>
               </div>
             </li>
           ))}

@@ -29,3 +29,59 @@
 .right-part {
     margin-top: 50px;
 }
+
+.all-posts {
+    width: 100%;
+
+}
+
+.all-posts ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    margin-left: 23%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.all-posts-li {
+    display: grid;
+    grid-auto-flow: row;
+    border: 3px solid rgba(128, 128, 128, 0.668);
+    border-radius: 20px;
+    width: 78%;
+    padding: 22px;
+}
+
+.user-part {
+    display: grid;
+    grid-auto-flow: column;
+    width: 15%;
+}
+
+.user-part img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-part h3 {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content img {
+    width: 800px;
+    padding-bottom: 20px;
+}
+
+.post-content p {
+    width: 800px;
+    font-size: 18px;
+    text-align: justify;
+}
