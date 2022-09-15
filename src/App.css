@@ -91,3 +91,10 @@
     grid-auto-flow: column;
     width: 300px;
 }
+
+.get-comment {
+    padding: 20px;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+}
