@@ -44,6 +44,7 @@ function App() {
               </div>
               <div className='like-comment'>
                 <h4>💗 {item.likesInTotal}</h4>
+                <h4>{item.comment.length} Comments</h4>
               </div>
             </li>
           ))}

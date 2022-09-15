@@ -85,3 +85,9 @@
     font-size: 18px;
     text-align: justify;
 }
+
+.like-comment {
+    display: grid;
+    grid-auto-flow: column;
+    width: 300px;
+}
