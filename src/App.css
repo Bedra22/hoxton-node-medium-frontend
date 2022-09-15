@@ -1,0 +1,31 @@
+.h1-title {
+    text-align: center;
+    padding: 30px;
+    font-family: fantasy;
+    font-size: 60px;
+}
+
+.first-part {
+    padding: 50px;
+    display: grid;
+    grid-auto-flow: column;
+    background-color: rgb(255, 200, 0);
+}
+
+.left-part {
+    padding: 50px;
+    width: 600px;
+}
+
+.left-part h1 {
+    font-size: 80px;
+    padding-bottom: 20px;
+}
+
+.left-part p {
+    font-size: 26px;
+}
+
+.right-part {
+    margin-top: 50px;
+}
