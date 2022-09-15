@@ -45,6 +45,11 @@
     margin-bottom: 30px;
 }
 
+.all-posts ul a {
+    color: black;
+    text-decoration: none;
+}
+
 .all-posts-li {
     display: grid;
     grid-auto-flow: row;
