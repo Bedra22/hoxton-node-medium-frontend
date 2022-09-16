@@ -3,6 +3,8 @@
     padding: 30px;
     font-family: fantasy;
     font-size: 60px;
+    background-color: rgb(255, 200, 0);
+    border-bottom: 2px black solid;
 }
 
 .first-part {
@@ -32,7 +34,6 @@
 
 .all-posts {
     width: 100%;
-
 }
 
 .all-posts ul {
@@ -102,4 +103,18 @@
     display: grid;
     grid-auto-flow: row;
     gap: 5px;
+}
+
+.get-comment li {
+    list-style: none;
+}
+
+.each-post {
+    border: 3px solid rgba(128, 128, 128, 0.668);
+    border-radius: 20px;
+    width: 60%;
+    padding: 22px;
+    margin-left: 21.5%;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }

@@ -1,7 +1,6 @@
 export function Header() {
     return (
         <div>
-            <h1 className='h1-title'>Medium BLOG</h1>
             <div className='first-part'>
                 <div className='left-part'>
                     <h1>Stay curious.</h1>

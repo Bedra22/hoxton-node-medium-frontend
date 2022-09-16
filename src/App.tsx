@@ -12,9 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <h1 className='h1-title'>Medium BLOG</h1>
       <Routes>
-        <Route path='/' element={<AllPosts />} />
+        <Route path='/posts' element={<AllPosts />} />
         <Route path='/posts/:id' element={< EachPosts />} />
       </Routes>
     </div >
