@@ -118,3 +118,56 @@
     margin-bottom: 30px;
     margin-top: 30px;
 }
+
+.new-comment-input {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.new-comment-input textarea {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.new-comment-input button {
+    width: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+.new-posts-inputs h1 {
+    text-align: center;
+    padding: 20px;
+    margin-left: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.add-new-post {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    width: 46%;
+    margin-left: 30%;
+}
+
+.add-new-post input {
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.new-posts-inputs button {
+    width: 150px;
+    padding: 10px;
+    font-size: large;
+    font-family: fantasy;
+    border-radius: 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    margin-left: 47%;
+    margin-top: 30px;
+}

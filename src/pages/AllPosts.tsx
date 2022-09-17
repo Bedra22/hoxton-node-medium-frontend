@@ -8,9 +8,15 @@ type allPosts = {
     writenContent: string;
     usersId: number;
     likesInTotal: number;
-    comment: Comment[];
+    Users: User;
+    comment: Comment[]
 }
-
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    image: string;
+}
 type Comment = {
     id: number;
     content: string;
@@ -20,7 +26,6 @@ type Comment = {
 export function AllPosts() {
 
     const [allPosts, setAllPosts] = useState<allPosts[]>([])
-    const [commentsOnPosts, setCommentsOnPosts] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:5000/posts")
@@ -28,54 +33,59 @@ export function AllPosts() {
             .then(postsFromServere => setAllPosts(postsFromServere))
     }, [])
 
-    useEffect(() => {
-        fetch("http://localhost:5000/comments")
-            .then(resp => resp.json())
-            .then(commentsFromServers => setCommentsOnPosts(commentsFromServers))
-    }, [])
 
     return (
         <div>
             <Header />
 
             <div className='all-posts'>
-                <ul>
-                    {/* <form
-                        className="add-posts"
-                        onSubmit={event => {
-                            event.preventDefault()
-                            fetch("http://localhost:5000/posts", {
-                                method: 'POST',
-                                headers: {
-                                    'content-type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    imageContent: event.target.imageContent.value,
-                                    writenContent: event.target.writenContent.value,
-                                    usersId: event.target.usersId.values,
-                                    likesInTotal: event.target.likesInTotal.value
-                                })
-
-                            })
-                                .then(resp => resp.json())
-                                .then(updatedPosts => setAllPosts(updatedPosts))
-                        }}
-                    >
-                        <div className="new-posts-inputs">
-                            <textarea name="writenContent" cols={30} rows={10}>
-
-                            </textarea>
-                            <input type="text"
-                                name="imageContent" />
-                            <input type="string"
-                                name="likesInTotal"
+                <form
+                    className="add-posts"
+                    onSubmit={event => {
+                        event.preventDefault()
+                        let newPost = {
+                            imageContent: event.target.imageContent.value,
+                            writenContent: event.target.writenContent.value,
+                            likesInTotal: event.target.likesInTotal.value,
+                            usersId: event.target.usersId.value
+                        }
+                        fetch("http://localhost:5000/posts", {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(newPost)
+                        })
+                            .then(resp => resp.json())
+                            .then(updatedPosts => setAllPosts(updatedPosts))
+                    }}
+                >
+                    <div className="new-posts-inputs">
+                        <h1>Add a new Post</h1>
+                        <div className="add-new-post">
+                            <input
+                                name="writenContent"
+                                placeholder="Add written Content"
                             />
-                            <button>Post</button>
+                            <input type="url"
+                                name="imageContent"
+                                placeholder="Add image URL"
+                            />
+                            <input type="number"
+                                name="likesInTotal"
+                                placeholder="Likes"
+                            />
+                            <input type="number"
+                                name="usersId"
+                                placeholder="Add users ID"
+                            />
                         </div>
-                    </form> */}
+                        <button>Post</button>
+                    </div>
+                </form>
+                <ul>
                     {allPosts.map(item => (
                         <li className='all-posts-li'>
-
                             <Link to={`/posts/${item.id}`}>
                                 <div className='user-part' >
                                     <img src={item.Users.image} />
@@ -119,10 +129,12 @@ export function AllPosts() {
                                 <div className='new-comment-input'>
                                     <textarea name="content"
                                         cols={30}
-                                        rows={1}>
+                                        rows={1}
+                                        placeholder="Add a comment "
+                                    >
                                     </textarea>
                                     <button>
-                                        Submit
+                                        👆
                                     </button>
                                 </div>
 
@@ -131,7 +143,7 @@ export function AllPosts() {
                     ))}
                 </ul>
             </div>
-        </div>
+        </div >
 
     )
 }

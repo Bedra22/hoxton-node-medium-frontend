@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <h1 className='h1-title'>Medium BLOG</h1>
       <Routes>
-        <Route path='/posts' element={<AllPosts />} />
+        <Route path='/' element={<AllPosts />} />
         <Route path='/posts/:id' element={< EachPosts />} />
       </Routes>
     </div >

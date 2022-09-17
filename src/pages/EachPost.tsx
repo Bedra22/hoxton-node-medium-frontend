@@ -69,7 +69,7 @@ export function EachPosts() {
                         rows={1}>
                     </textarea>
                     <button>
-                        Submit
+                        👆
                     </button>
                 </div>
             </form>
