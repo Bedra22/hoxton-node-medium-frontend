@@ -46,9 +46,11 @@ export function AllPosts() {
                         let newPost = {
                             imageContent: event.target.imageContent.value,
                             writenContent: event.target.writenContent.value,
-                            likesInTotal: event.target.likesInTotal.value,
-                            usersId: event.target.usersId.value
+                            likesInTotal: Number(event.target.likesInTotal.value),
+                            usersId: Number(event.target.usersId.value)
                         }
+                        console.log("The new post is", newPost)
+
                         fetch("http://localhost:5000/posts", {
                             method: 'POST',
                             headers: {

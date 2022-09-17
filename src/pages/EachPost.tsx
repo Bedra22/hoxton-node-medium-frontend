@@ -45,7 +45,7 @@ export function EachPosts() {
                     </li>
                 ))}
             </div>
-            <form
+            {/* <form
                 className='add-comment'
                 onSubmit={event => {
                     event.preventDefault()
@@ -72,7 +72,7 @@ export function EachPosts() {
                         👆
                     </button>
                 </div>
-            </form>
+            </form> */}
         </div>
     )
 }
